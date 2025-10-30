@@ -1,11 +1,11 @@
-import React, { Fragment, memo, useCallback, useState } from 'react';
+import React, { Fragment, memo, useCallback, useState, useEffect } from 'react';
 import type { Result } from 'src/types';
 import { AddonPanel } from 'storybook/internal/components';
 import { Button, Placeholder, TabsState } from 'storybook/internal/components';
-import { useChannel } from 'storybook/manager-api';
+import { useChannel, useParameter } from 'storybook/manager-api';
 import { styled, useTheme } from 'storybook/theming';
 
-import { EVENTS } from '../constants';
+import { ADDON_ID, EVENTS } from '../constants';
 import { List } from './List';
 
 interface PanelProps {
@@ -18,6 +18,7 @@ export const RequestDataButton = styled(Button)({
 
 export const Panel: React.FC<PanelProps> = memo(function MyPanel(props: PanelProps) {
   const theme = useTheme();
+  const deck = useParameter('deck', []);
 
   // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
   const [{ divs, styled }, setState] = useState<Result>({
@@ -46,7 +47,16 @@ export const Panel: React.FC<PanelProps> = memo(function MyPanel(props: PanelPro
               button below to fetch data for the other two tabs.
             </Fragment>
             <Fragment>
-              <RequestDataButton onClick={fetchData}>Request data</RequestDataButton>
+              {
+                deck.map((config, index) => {
+                  const onClick = () => {
+                    emit(config.name);
+                  }
+                  return (
+                    <Button key={ index } onClick={ onClick }> { config.label } </Button>
+                  )
+                })
+              }
             </Fragment>
           </Placeholder>
         </div>
