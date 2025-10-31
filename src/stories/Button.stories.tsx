@@ -24,27 +24,23 @@ const meta: Meta<typeof Button> = {
         name: 'button1',
         action: () => { console.log('hello world yeah') },
       },
+      {
+        label: 'hello world!',
+        name: 'button2',
+        action: () => { console.log('hello world yeah yeah yeah') },
+      },
     ],
   },
   decorators: [
-    (Story, context) => {
+    (Story, { parameters }) => {
+      const { deck = [] } = parameters;
 
-      // useEffect(() => {
-      //   console.log(context);
-      // }, [context])
+      const eventMap = deck.reduce((acc, config) => {
+        acc[config.name] = config.action;
+        return acc;
+      }, {});
 
-      // useEffect(() => {
-      //   console.log(hooks)
-      //   console.log(hooks.useArgs)
-      //   console.log(hooks.useParameters)
-      //   console.log(hooks.useChannel)
-      // }, [hooks])
-
-      useChannel({
-        button1: () => {
-          console.log('hi');
-        },
-      });
+      useChannel(eventMap);
 
       return <Story />
     },
