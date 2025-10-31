@@ -117,5 +117,9 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
+  },
+  "dependencies": {
+    "markdown-to-jsx": "^8.0.0",
+    "polished": "^4.3.1"
   }
 }

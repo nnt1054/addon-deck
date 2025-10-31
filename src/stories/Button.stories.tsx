@@ -20,31 +20,25 @@ const meta: Meta<typeof Button> = {
   parameters: {
     deck: [
       {
-        label: 'hello world!',
         name: 'button1',
+        description: 'hello world!',
+        label: 'hello world!',
         action: () => { console.log('hello world yeah') },
       },
       {
-        label: 'hello world!',
         name: 'button2',
-        action: () => { console.log('hello world yeah yeah yeah') },
+        description: 'hello world!',
+        label: 'hello world!',
+        action: () => { console.log('hello world yeah yeah yeah yeah') },
+      },
+      {
+        name: 'button3',
+        description: 'hello world!',
+        label: 'increment health +5',
+        action: () => { console.log('update health') },
       },
     ],
   },
-  decorators: [
-    (Story, { parameters }) => {
-      const { deck = [] } = parameters;
-
-      const eventMap = deck.reduce((acc, config) => {
-        acc[config.name] = config.action;
-        return acc;
-      }, {});
-
-      useChannel(eventMap);
-
-      return <Story />
-    },
-  ],
 };
 
 export default meta;

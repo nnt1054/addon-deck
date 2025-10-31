@@ -11,6 +11,7 @@
 import type { ProjectAnnotations, Renderer } from 'storybook/internal/types';
 
 import { KEY } from './constants';
+import { withDeck } from './withDeck';
 import { withGlobals } from './withGlobals';
 import { withRoundTrip } from './withRoundTrip';
 
@@ -20,7 +21,7 @@ import { withRoundTrip } from './withRoundTrip';
  */
 
 const preview: ProjectAnnotations<Renderer> = {
-  decorators: [withGlobals, withRoundTrip],
+  decorators: [withDeck, withGlobals, withRoundTrip],
   initialGlobals: {
     [KEY]: false,
   },
