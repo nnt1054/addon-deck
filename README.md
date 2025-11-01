@@ -1,6 +1,6 @@
-# Storybook Addon Deck
+# Storybook Addon Commands
 
-used to create a list of buttons that map to functions for dynamically interacting with a story
+Create a Commands Table of buttons that map to functions for dynamically interacting with a story.
 
 ### Development scripts
 

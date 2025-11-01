@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-deck",
+  "name": "storybook-addon-commands",
   "version": "0.0.0",
   "description": "used to create a list of buttons that map to functions for dynamically interacting with a story",
   "keywords": [
@@ -98,7 +98,7 @@
     ]
   },
   "storybook": {
-    "displayName": "Deck",
+    "displayName": "Commands",
     "supportedFrameworks": [
       "react",
       "vue",
