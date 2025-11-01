@@ -2,10 +2,9 @@ import type { FC } from 'react';
 import React, { useEffect, useState } from 'react';
 
 import { EmptyTabContent, Link } from 'storybook/internal/components';
+import { styled } from 'storybook/theming';
 
 import { DocumentIcon } from '@storybook/icons';
-
-import { styled } from 'storybook/theming';
 
 const Wrapper = styled.div(({ theme }) => ({
   height: '100%',
@@ -44,11 +43,11 @@ export const Empty: FC = () => {
   return (
     <Wrapper>
       <EmptyTabContent
-        title={'command deck for adding interactive buttons'}
+        title={'Command Deck for adding Interactive Buttons'}
         description={
           <>
-            Controls give you an easy to use interface to test your components. Set your story args and you&apos;ll see
-            controls appearing here automatically. (todo: update this lmao)
+            Commands give you an easy way to define and execute custom functions with access to some Storybook hooks
+            context. (e.g. args, updateArgs, parameters)
           </>
         }
         footer={

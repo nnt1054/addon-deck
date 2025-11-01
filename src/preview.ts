@@ -10,7 +10,7 @@
  */
 import type { ProjectAnnotations, Renderer } from 'storybook/internal/types';
 
-import { withDeck } from './withDeck';
+import { withCommands } from './withCommands';
 
 /**
  * Note: if you want to use JSX in this file, rename it to `preview.tsx`
@@ -18,7 +18,7 @@ import { withDeck } from './withDeck';
  */
 
 const preview: ProjectAnnotations<Renderer> = {
-  decorators: [withDeck],
+  decorators: [withCommands],
 };
 
 export default preview;

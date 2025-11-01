@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Button } from './Button';
 import { fn } from 'storybook/test';
+
+import { Button } from './Button';
+import type { CommandsContextType } from '../components/types';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Button> = {
@@ -16,29 +18,20 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   parameters: {
-    deck: [
+    commands: [
       {
-        name: 'button1',
-        description: 'hello world!',
-        label: 'hello world!',
+        name: 'command1',
+        description: 'Prints out "Hello World!" in the console.',
+        label: 'Hello World!',
         action: () => {
-          console.log('hello world yeah???');
+          console.log('Hello world!');
         },
       },
       {
-        name: 'button2',
-        description: 'hello world!',
-        label: 'hello world!',
-        action: () => {
-          console.log('hello world yeah yeah yeah yeah');
-        },
-      },
-      {
-        name: 'button3',
-        description: 'hello world!',
-        label: 'increment health +5',
-        action: () => {
-          console.log('update health');
+        name: 'flipPrimary',
+        description: 'Flips the current value of `primary` in args.',
+        action: ({ args, updateArgs }: CommandsContextType) => {
+          updateArgs({ primary: !args.primary });
         },
       },
     ],

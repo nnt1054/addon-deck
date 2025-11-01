@@ -1,8 +1,11 @@
 import React, { memo, useState, useEffect } from 'react';
+
 import { AddonPanel } from 'storybook/internal/components';
 import { useParameter, useStorybookState } from 'storybook/manager-api';
 import { styled } from 'storybook/theming';
+
 import { CommandsTable } from './CommandsTable';
+import { PARAM_KEY } from '../constants';
 
 const AddonWrapper = styled.div({
   display: 'grid',
@@ -18,7 +21,7 @@ interface CommandsPanelProps {
 
 export const CommandsPanel: React.FC<CommandsPanelProps> = memo((props: CommandsPanelProps) => {
   const { path, previewInitialized } = useStorybookState();
-  const commands = useParameter('deck', []);
+  const commands = useParameter(PARAM_KEY, []);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

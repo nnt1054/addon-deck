@@ -1,5 +1,6 @@
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
+
 import { ADDON_ID } from './constants';
 
 /**

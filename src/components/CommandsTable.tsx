@@ -1,6 +1,8 @@
 import React from 'react';
-import { styled } from 'storybook/theming';
+
 import { transparentize } from 'polished';
+import { styled } from 'storybook/theming';
+
 import { Empty } from './Empty';
 import { Skeleton } from './Skeleton';
 import { CommandRow } from './CommandRow';
@@ -88,10 +90,9 @@ export const TableWrapper = styled.table(({ theme }) => ({
 export type CommandsTableProps = {
   commands: Array<CommandType>;
   isLoading?: boolean;
-  temp: boolean;
 };
 
-export const CommandsTable: FC<CommandsTableProps> = ({ commands, isLoading }: CommandsTableProps) => {
+export const CommandsTable: React.FC<CommandsTableProps> = ({ commands, isLoading }: CommandsTableProps) => {
   if (isLoading) {
     return <Skeleton />;
   }

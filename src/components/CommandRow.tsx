@@ -1,9 +1,11 @@
 import React from 'react';
-import { Button } from 'storybook/internal/components';
-import { useChannel } from 'storybook/manager-api';
+
 import Markdown from 'markdown-to-jsx';
+import { Button, codeCommon } from 'storybook/internal/components';
+import { useChannel } from 'storybook/manager-api';
 import { styled } from 'storybook/theming';
-import { codeCommon } from 'storybook/internal/components';
+import type { CSSObject } from 'storybook/theming';
+
 import type { CommandType } from './types';
 
 const Description = styled.div(({ theme }) => ({
@@ -32,7 +34,11 @@ const Description = styled.div(({ theme }) => ({
   },
 }));
 
-export const CommandRow: React.FC<CommandType> = ({ row }: CommandType) => {
+export type CommandRowProps = {
+  row: CommandType;
+};
+
+export const CommandRow: React.FC<CommandRowProps> = ({ row }: CommandRowProps) => {
   const { name, description, label } = row;
   const emit = useChannel({});
   const onClick = () => {
