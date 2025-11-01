@@ -4,6 +4,7 @@ import { transparentize } from 'polished';
 import { Empty } from './Empty';
 import { Skeleton } from './Skeleton';
 import { CommandRow } from './CommandRow';
+import type { CommandType } from './types';
 
 const TablePositionWrapper = styled.div({
   position: 'relative',
@@ -84,7 +85,13 @@ export const TableWrapper = styled.table(({ theme }) => ({
   },
 }));
 
-export const CommandsTable = ({ commands, isLoading }) => {
+export type CommandsTableProps = {
+  commands: Array<CommandType>;
+  isLoading?: boolean;
+  temp: boolean;
+};
+
+export const CommandsTable: FC<CommandsTableProps> = ({ commands, isLoading }: CommandsTableProps) => {
   if (isLoading) {
     return <Skeleton />;
   }
@@ -94,26 +101,24 @@ export const CommandsTable = ({ commands, isLoading }) => {
   }
 
   return (
-      <TablePositionWrapper>
-        <TableWrapper className="docblock-argstable sb-unstyled">
-          <thead className="docblock-argstable-head">
-            <tr>
-              <th>
-                <span>Description</span>
-              </th>
-              <th>
-                <span>Button</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody className="docblock-argstable-body">
-            {
-              commands.map((config, index) => {
-                return <CommandRow key={ index } config={ config } />
-              })
-            }
-          </tbody>
-        </TableWrapper>
-      </TablePositionWrapper>
+    <TablePositionWrapper>
+      <TableWrapper className="docblock-argstable sb-unstyled">
+        <thead className="docblock-argstable-head">
+          <tr>
+            <th>
+              <span>Description</span>
+            </th>
+            <th>
+              <span>Button</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody className="docblock-argstable-body">
+          {commands.map((row, index) => {
+            return <CommandRow key={index} row={row} />;
+          })}
+        </tbody>
+      </TableWrapper>
+    </TablePositionWrapper>
   );
-}
+};

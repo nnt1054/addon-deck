@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect } from 'react';
 import { AddonPanel } from 'storybook/internal/components';
 import { useParameter, useStorybookState } from 'storybook/manager-api';
 import { styled } from 'storybook/theming';
-import { CommandsTable } from './CommandsTable'
+import { CommandsTable } from './CommandsTable';
 
 const AddonWrapper = styled.div({
   display: 'grid',
@@ -12,32 +12,28 @@ const AddonWrapper = styled.div({
   overflowY: 'auto',
 });
 
-interface PanelProps {
+interface CommandsPanelProps {
   active?: boolean;
 }
 
-export const Panel: React.FC<PanelProps> = memo(function MyPanel(props: PanelProps) {
+export const CommandsPanel: React.FC<CommandsPanelProps> = memo((props: CommandsPanelProps) => {
   const { path, previewInitialized } = useStorybookState();
+  const commands = useParameter('deck', []);
   const [isLoading, setIsLoading] = useState(true);
 
-  // If the story is prepared, then show the args table
-  // and reset the loading states
   useEffect(() => {
     if (previewInitialized) {
       setIsLoading(false);
     }
   }, [previewInitialized]);
 
-  const commands = useParameter('deck', []);
-
   return (
     <AddonPanel active={props.active ?? false}>
       <AddonWrapper>
-        <CommandsTable
-          commands={ commands }
-          isLoading={ isLoading }
-        />
+        <CommandsTable key={path} commands={commands} isLoading={isLoading} />
       </AddonWrapper>
     </AddonPanel>
   );
 });
+
+CommandsPanel.displayName = 'CommandsPanel';

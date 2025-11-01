@@ -18,42 +18,38 @@ const Row = styled.div(({ theme }) => ({
   },
 }));
 
-const Column = styled.div<{ position: 'first' | 'second' | 'third' | 'last' }>(
-  ({ position, theme }) => {
-    const baseStyles = {
-      display: 'flex',
-      flexDirection: 'column' as const,
-      gap: 5,
-      padding: '10px 15px',
-      alignItems: 'flex-start',
-    };
+const Column = styled.div<{ position: 'first' | 'second' | 'third' | 'last' }>(({ position }) => {
+  const baseStyles = {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: 5,
+    padding: '10px 15px',
+    alignItems: 'flex-start',
+  };
 
-    // Apply the same column width ratios as the actual ArgsTable component
-    switch (position) {
-      case 'first':
-        return {
-          ...baseStyles,
-          width: '75%',
-          paddingLeft: 20,
-        };
-      case 'second':
-        return {
-          ...baseStyles,
-          width: '25%',
-        };
-    }
+  // Apply the same column width ratios as the actual ArgsTable component
+  switch (position) {
+    case 'first':
+      return {
+        ...baseStyles,
+        width: '75%',
+        paddingLeft: 20,
+      };
+    case 'second':
+      return {
+        ...baseStyles,
+        width: '25%',
+      };
   }
-);
+});
 
-const SkeletonText = styled.div<{ width?: number | string; height?: number }>(
-  ({ theme, width, height }) => ({
-    animation: `${theme.animation.glow} 1.5s ease-in-out infinite`,
-    background: theme.appBorderColor,
-    width: width || '100%',
-    height: height || 16,
-    borderRadius: 3,
-  })
-);
+const SkeletonText = styled.div<{ width?: number | string; height?: number }>(({ theme, width, height }) => ({
+  animation: `${theme.animation.glow} 1.5s ease-in-out infinite`,
+  background: theme.appBorderColor,
+  width: width || '100%',
+  height: height || 16,
+  borderRadius: 3,
+}));
 
 export const Skeleton: FC = () => (
   <TableWrapper>

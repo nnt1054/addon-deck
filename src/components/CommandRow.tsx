@@ -4,6 +4,7 @@ import { useChannel } from 'storybook/manager-api';
 import Markdown from 'markdown-to-jsx';
 import { styled } from 'storybook/theming';
 import { codeCommon } from 'storybook/internal/components';
+import type { CommandType } from './types';
 
 const Description = styled.div(({ theme }) => ({
   '&&': {
@@ -31,10 +32,12 @@ const Description = styled.div(({ theme }) => ({
   },
 }));
 
-export const CommandRow = ({ config }) => {
-  const { name, description, label } = config;
+export const CommandRow: React.FC<CommandType> = ({ row }: CommandType) => {
+  const { name, description, label } = row;
   const emit = useChannel({});
-  const onClick = () => { emit(name); }
+  const onClick = () => {
+    emit(name);
+  };
 
   return (
     <tr>
@@ -44,12 +47,8 @@ export const CommandRow = ({ config }) => {
         </Description>
       </td>
       <td>
-        <Button
-          variant="outline"
-          size="medium"
-          onClick={ onClick }
-        >
-          { label || "Confirm" }
+        <Button variant="outline" size="medium" onClick={onClick}>
+          {label || 'Confirm'}
         </Button>
       </td>
     </tr>

@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Button } from './Button';
 import { fn } from 'storybook/test';
-import { useChannel } from 'storybook/preview-api';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Button> = {
@@ -23,19 +21,25 @@ const meta: Meta<typeof Button> = {
         name: 'button1',
         description: 'hello world!',
         label: 'hello world!',
-        action: () => { console.log('hello world yeah') },
+        action: () => {
+          console.log('hello world yeah???');
+        },
       },
       {
         name: 'button2',
         description: 'hello world!',
         label: 'hello world!',
-        action: () => { console.log('hello world yeah yeah yeah yeah') },
+        action: () => {
+          console.log('hello world yeah yeah yeah yeah');
+        },
       },
       {
         name: 'button3',
         description: 'hello world!',
         label: 'increment health +5',
-        action: () => { console.log('update health') },
+        action: () => {
+          console.log('update health');
+        },
       },
     ],
   },

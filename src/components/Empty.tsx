@@ -26,7 +26,7 @@ const Links = styled.div(({ theme }) => ({
   gap: 25,
 }));
 
-export const Empty: FC<{}> = () => {
+export const Empty: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -44,20 +44,16 @@ export const Empty: FC<{}> = () => {
   return (
     <Wrapper>
       <EmptyTabContent
-        title={ 'command deck for adding interactive buttons' }
+        title={'command deck for adding interactive buttons'}
         description={
           <>
-            Controls give you an easy to use interface to test your components. Set your story args
-            and you&apos;ll see controls appearing here automatically. (todo: update this lmao)
+            Controls give you an easy to use interface to test your components. Set your story args and you&apos;ll see
+            controls appearing here automatically. (todo: update this lmao)
           </>
         }
         footer={
           <Links>
-            <Link
-              href="https://storybook.js.org/docs/essentials/controls?ref=ui"
-              target="_blank"
-              withArrow
-            >
+            <Link href="https://storybook.js.org/docs/essentials/controls?ref=ui" target="_blank" withArrow>
               <DocumentIcon /> Read docs (todo: add a doc link here)
             </Link>
           </Links>
