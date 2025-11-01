@@ -1,13 +1,13 @@
 {
   "name": "storybook-addon-commands",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "used to create a list of buttons that map to functions for dynamically interacting with a story",
   "keywords": [
     "storybook-addon"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nnt1054/addon-deck"
+    "url": "https://github.com/nnt1054/addon-commands"
   },
   "license": "MIT",
   "author": "Neil Toledo <neeull2@gmail.com>",
