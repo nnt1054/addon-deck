@@ -1,7 +1,7 @@
 {
   "name": "storybook-addon-commands",
   "version": "0.0.4",
-  "description": "used to create a list of buttons that map to functions for dynamically interacting with a story",
+  "description": "Create a Commands Table of Buttons that map to functions for dynamically interacting with a Story",
   "keywords": [
     "storybook-addon"
   ],
@@ -44,8 +44,8 @@
     "prerelease": "zx scripts/prepublish-checks.js",
     "release": "npm run build && auto shipit",
     "start": "run-p build:watch \"storybook --quiet\"",
-    "storybook": "storybook dev -p 6006 --exact-port --no-open --debug",
-    "storybook:watch": "nodemon --watch dist --exec \"npm run storybook\"",
+    "storybook": "storybook dev -p 6006 --debug",
+    "storybook:watch": "nodemon --watch dist --exec \"npm run storybook -- --exact-port --no-open\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -100,15 +100,7 @@
   "storybook": {
     "displayName": "Commands",
     "supportedFrameworks": [
-      "react",
-      "vue",
-      "angular",
-      "web-components",
-      "ember",
-      "html",
-      "svelte",
-      "preact",
-      "react-native"
+      "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   },

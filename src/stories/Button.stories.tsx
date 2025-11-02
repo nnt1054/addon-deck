@@ -34,6 +34,14 @@ const meta: Meta<typeof Button> = {
           updateArgs({ primary: !args.primary });
         },
       },
+      {
+        name: 'printCommandsContext',
+        label: 'Print Context',
+        description: 'Prints out the `CommandsContext` passed into the action function into the console.',
+        action: (context: CommandsContextType) => {
+          console.log(context);
+        },
+      },
     ],
   },
 };
@@ -41,31 +49,18 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const Primary: Story = {
-  // More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const Default: Story = {
   args: {
     primary: true,
     label: 'Button',
   },
 };
 
-export const Secondary: Story = {
+export const EmptyCommands: Story = {
   args: {
     label: 'Button',
   },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+  parameters: {
+    commands: [],
   },
 };
