@@ -25,10 +25,10 @@ export default {
       },
       {
         name: 'decreaseHealth15',
-        description: 'Decreases health by 10 HP.',
-        label: 'Inflict -10 HP',
+        description: 'Decreases health by 15 HP.',
+        label: 'Inflict -15 HP',
         action: ({ args, updateArgs }) => {
-          updateArgs({ health: Math.max(0, args.health - 10) });
+          updateArgs({ health: Math.max(0, args.health - 15) });
         },
       },
     ],
