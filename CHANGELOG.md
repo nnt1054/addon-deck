@@ -1,3 +1,19 @@
+# v0.0.5 (Fri Nov 07 2025)
+
+#### ⚠️ Pushed to `main`
+
+- Update package.json ([@nnt1054](https://github.com/nnt1054))
+- Update README.md ([@nnt1054](https://github.com/nnt1054))
+- updating readme ([@nnt1054](https://github.com/nnt1054))
+- adding HealthBar story and binding callbacks to eventemitter ([@nnt1054](https://github.com/nnt1054))
+- cleaning up stories; updating readme ([@nnt1054](https://github.com/nnt1054))
+
+#### Authors: 1
+
+- Neil Toledo ([@nnt1054](https://github.com/nnt1054))
+
+---
+
 # v0.0.4 (Sat Nov 01 2025)
 
 #### ⚠️ Pushed to `main`
