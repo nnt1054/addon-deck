@@ -1,5 +1,9 @@
 # Storybook Addon Commands
 
+Create a Commands Table of Buttons that map to functions for dynamically interacting with a Story
+
+<img width="1536" height="992" alt="image" src="https://github.com/user-attachments/assets/19ca562a-9f8f-4ab0-8695-58ecb81ba68c" />
+
 ## Installation
 
 First, install the package.
