@@ -13,10 +13,6 @@ export interface CommandsContextType {
 }
 
 export type CommandAction = (context: CommandsContextType) => void;
-export interface EventMap {
-  [eventId: string]: CommandAction;
-}
-
 export interface CommandType {
   name: string;
   description?: string;

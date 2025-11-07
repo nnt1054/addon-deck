@@ -42,7 +42,7 @@ export const CommandRow: React.FC<CommandRowProps> = ({ row }: CommandRowProps) 
   const { name, description, label } = row;
   const emit = useChannel({});
   const onClick = () => {
-    emit(name);
+    emit('command', name);
   };
 
   return (

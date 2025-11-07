@@ -111,6 +111,7 @@
     ]
   },
   "dependencies": {
+    "eventemitter3": "^5.0.1",
     "markdown-to-jsx": "^8.0.0",
     "polished": "^4.3.1"
   }
