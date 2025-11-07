@@ -1,3 +1,15 @@
+# v1.0.2 (Fri Nov 07 2025)
+
+#### ⚠️ Pushed to `main`
+
+- updating documentation link in Empty ([@nnt1054](https://github.com/nnt1054))
+
+#### Authors: 1
+
+- Neil Toledo ([@nnt1054](https://github.com/nnt1054))
+
+---
+
 # v0.0.5 (Fri Nov 07 2025)
 
 #### ⚠️ Pushed to `main`
