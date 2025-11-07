@@ -52,8 +52,8 @@ export const Empty: FC = () => {
         }
         footer={
           <Links>
-            <Link href="https://storybook.js.org/docs/essentials/controls?ref=ui" target="_blank" withArrow>
-              <DocumentIcon /> Read docs (todo: add a doc link here)
+            <Link href="https://github.com/nnt1054/addon-commands" target="_blank" withArrow>
+              <DocumentIcon /> Read docs
             </Link>
           </Links>
         }

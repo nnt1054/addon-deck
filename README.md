@@ -74,6 +74,7 @@ Each `CommandType` object consists of the following properties:
 #### `name`
 
 Type: `string`
+
 `Required`
 
 Unique `string` used for the event name by the `commands` event listener.
@@ -81,6 +82,7 @@ Unique `string` used for the event name by the `commands` event listener.
 #### `description`
 
 Type: `string`
+
 `Optional`
 
 Description for the command displayed on the table in the Commands Panel.
@@ -88,6 +90,7 @@ Description for the command displayed on the table in the Commands Panel.
 #### `label`
 
 Type: `string`
+
 `Optional`
 
 Label used for the button that triggers the `action` function. Defaults to `"Confirm"` if no value
@@ -96,6 +99,8 @@ is provided.
 #### `action`
 
 Type: `function`
+
+`Required`
 
 Function called when the Command button is clicked. A `CommandsContextType` object with the following
 structure is passed as the first and only parameter to the function.
