@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-commands",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a Commands Table of Buttons that map to functions for dynamically interacting with a Story",
   "keywords": [
     "storybook-addon"
