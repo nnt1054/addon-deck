@@ -1,4 +1,4 @@
-import EventEmitter from 'eventemitter3';
+import { EventEmitter } from 'eventemitter3';
 import { useEffect } from 'react';
 import { useChannel, useArgs, useGlobals, useStoryContext } from 'storybook/preview-api';
 import type { Renderer, StoryContext, PartialStoryFn as StoryFunction } from 'storybook/internal/types';
