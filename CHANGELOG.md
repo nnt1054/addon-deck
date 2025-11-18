@@ -1,3 +1,15 @@
+# v1.0.3 (Tue Nov 18 2025)
+
+#### ⚠️ Pushed to `main`
+
+- updating eventemitter import ([@nnt1054](https://github.com/nnt1054))
+
+#### Authors: 1
+
+- Neil Toledo ([@nnt1054](https://github.com/nnt1054))
+
+---
+
 # v1.0.2 (Fri Nov 07 2025)
 
 #### ⚠️ Pushed to `main`
